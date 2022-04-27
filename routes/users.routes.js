@@ -17,7 +17,10 @@ router.get('/', getAllUsers);
 
 router.post('/', createUser);
 
-router.route(`/id`).get(getUserById).patch(updateUser).delete(deleteUser);
+router.get('/id', getUserById)
+router.patch('/id', updateUser)
+router.delete('/id', deleteUser)
+
 
 //export default router es igual a:
 module.exports = { usersRouter: router };

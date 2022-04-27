@@ -11,6 +11,4 @@ const db = new Sequelize({
     database: 'repairs',
 });
 
-
-
 module.exports = {db}

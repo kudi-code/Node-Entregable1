@@ -1,4 +1,4 @@
-const { User } = require('../models/user.model');
+const { User } = require('../models/users.model');
 
 const getAllUsers = async (req, res) => {
   //SELECT * FROM users
@@ -14,20 +14,23 @@ const getAllUsers = async (req, res) => {
 
 const createUser = async (req, res) => {
   try {
-    const { name, email } = req.body;
+    const { name, email, password, role } = req.body;
     //INSERT INTO...
-    const newUser = await User.create({ name, email });
+    const newUser = await User.create({ name, email, password, role });
 
     const users = await User.findAll();
     res.status(201).json({
-      users,
+      status: "done!",
+      users
     });
   } catch (error) {
     console.log(error);
   }
 };
 
-const getUserById = async (req, res, next) => {
+const getUserById = async (req, res) => {
+  console.log("parching")
+
   try {
     const { id } = req.params; // {id} debe ser igual al parametro enviado por la URL
     //SELECT * FROM users WHERE id = ?
@@ -46,6 +49,7 @@ const getUserById = async (req, res, next) => {
     });
   } catch (error) {
     console.log(error);
+    console.log("hola")
   }
 };
 
