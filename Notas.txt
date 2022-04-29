@@ -1,0 +1,7 @@
+Join permite unir 2 tablas para que se pueda hacer una sola petición en 2 o + tablas
+Llave foránea: Id de otra tabla (userId)
+Lllave primaria
+
+JOIN users ON posts.userId = users.Id
+
+            Llave foránea    llave primaria

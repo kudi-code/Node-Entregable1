@@ -28,7 +28,7 @@ db.sync({
   .then(() => console.log('Sync successfully'))
   .catch(err => console.log(err));
 
-const PORT = '4000';
+const PORT = '4001';
 
 //spin up server
 app.listen(PORT, () => {
